@@ -46,6 +46,31 @@
     
   \section{} % 1.2
 
+  \begin{enumerate}[(1).]
+  \item $A \vee B \vee C$
+  \item $C \Rightarrow A$
+  \item $B \Rightarrow (A \vee C)$
+  \end{enumerate}
+  Pour savoir si A est le coupable il faut: $(1)\wedge(2)\wedge(3)$
+
+
+    \begin{center}
+    \begin{tabular}{llllllll}
+    &  &  & (1) & (2) &  & (3) & \\
+    $\textbf{A}$ & $\textbf{B}$ & $\textbf{C}$ & $A \vee B \vee C$ & $C \Rightarrow A$ & $A \vee C$ & $B \Rightarrow (A \vee C)$ & $(1)\wedge(2)\wedge(3)$\\
+    0 & 0 & 0 & 0 & 1 & 0 & 1 & 0\\
+    0 & 0 & 1 & 1 & 0 & 1 & 1 & 0\\
+    0 & 1 & 0 & 1 & 1 & 0 & 0 & 0\\
+    0 & 1 & 1 & 1 & 0 & 1 & 1 & 0\\
+    1 & 0 & 0 & 1 & 1 & 1 & 1 & 1\\
+    1 & 0 & 1 & 1 & 1 & 1 & 1 & 1\\
+    1 & 1 & 0 & 1 & 1 & 1 & 1 & 1\\
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1
+    \end{tabular}
+    \end{center}
+  
+Comme nous pouvons le constater, la derni\`{e}re collonne est \'{e}quivalente \`{a} la collonne A. C'est donc A le coupable.
+
   
  
  
