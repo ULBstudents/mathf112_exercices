@@ -62,7 +62,7 @@
 \begin{tabular}{ccccccccc}
 % use packages: color,colortbl
  &  &  & $A \vee B \vee C$ & $C \Rightarrow A$ &  & $B \Rightarrow (A \vee C)$ &  & \\
-\textbf{\textcolor{tcA}{$\textbf{A}$}} & \textbf{\textcolor{tcA}{$\textbf{B}$}} & \textbf{\textcolor{tcA}{$\textbf{C}$}} & \textbf{\textcolor{tcA}{(1)}} & \textbf{\textcolor{tcA}{(2)}} & \textbf{\textcolor{tcA}{$A \vee C$}} & \textbf{\textcolor{tcA}{(3)}} & \textbf{\textcolor{tcA}{(1)u(2)u(3)}} & \textbf{\textcolor{tcA}{(1)(2)(3)->A}}\\
+\textbf{\textcolor{tcA}{$\textbf{A}$}} & \textbf{\textcolor{tcA}{$\textbf{B}$}} & \textbf{\textcolor{tcA}{$\textbf{C}$}} & \textbf{\textcolor{tcA}{(1)}} & \textbf{\textcolor{tcA}{(2)}} & \textbf{\textcolor{tcA}{$A \vee C$}} & \textbf{\textcolor{tcA}{(3)}} & \textbf{\textcolor{tcA}{$(1)\wedge(2)\wedge(3)$}} & \textbf{\textcolor{tcA}{$(1)\wedge(2)\wedge(3) \Leftrightarrow A $}}\\
 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1\\
 0 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 1\\
 0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 1\\
@@ -75,12 +75,7 @@
 \end{center}
 
   
-Comme nous pouvons le constater, la derni\`{e}re collonne est \'{e}quivalente \`{a} la collonne A. C'est donc A le coupable.
-
-  
-  
-%     &  &  &  &  &  & $(1)\wedge(2)\wedge(3)$\\
-
+Comme nous pouvons le constater, la derni\`{e}re colonne prouve que $(1)\wedge(2)\wedge(3) \Leftrightarrow A $. A est donc le coupable.
  
  
  
