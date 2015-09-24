@@ -10,6 +10,7 @@
 \usepackage{multicol} % multi columns
 \usepackage{color}
 \usepackage{colortbl}
+\usepackage{amssymb}
 \setcounter{tocdepth}{0} % only chapters appear in 'table of contents'
 
 
@@ -59,10 +60,11 @@
 
 \definecolor{tcA}{rgb}{0,0,0}
 \begin{center}
-\begin{tabular}{ccccccccc}
-% use packages: color,colortbl
- &  &  & $A \vee B \vee C$ & $C \Rightarrow A$ &  & $B \Rightarrow (A \vee C)$ &  & \\
+\begin{tabular}{|ccc||cccc||c||c|}
+\hline
+&  &  & $A \vee B \vee C$ & $C \Rightarrow A$ &  & $B \Rightarrow (A \vee C)$ &  & \\
 \textbf{\textcolor{tcA}{$\textbf{A}$}} & \textbf{\textcolor{tcA}{$\textbf{B}$}} & \textbf{\textcolor{tcA}{$\textbf{C}$}} & \textbf{\textcolor{tcA}{(1)}} & \textbf{\textcolor{tcA}{(2)}} & \textbf{\textcolor{tcA}{$A \vee C$}} & \textbf{\textcolor{tcA}{(3)}} & \textbf{\textcolor{tcA}{$(1)\wedge(2)\wedge(3)$}} & \textbf{\textcolor{tcA}{$(1)\wedge(2)\wedge(3) \Leftrightarrow A $}}\\
+\hline
 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1\\
 0 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 1\\
 0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 1\\
@@ -70,19 +72,94 @@
 1 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1\\
 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1\\
 1 & 1 & 0 & 1 & 1 & 1 & 1 & 1 & 1\\
-1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1
+1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\\
+\hline
 \end{tabular}
 \end{center}
 
   
-Comme nous pouvons le constater, la derni\`{e}re colonne prouve que $(1)\wedge(2)\wedge(3) \Leftrightarrow A $. A est donc le coupable.
+Comme nous pouvons le constater, la derni\`{e}re colonne uprouve que $(1)\wedge(2)\wedge(3) \Leftrightarrow A $. A est donc le coupable.
  
  
  
  
- 
- 
- 
+\section{} % 1.3
+ \begin{enumerate}[a. ]
+  \item Faux. Faisons une table de v\'{e}rit\'{e} pour le cas o\`{u} $P \Rightarrow L$ et $L \Rightarrow P$. Le r\'{e}sultat n'est pas le m\^{e}me. L'affirmation est donc fausse.
+	\begin{center}
+	  \begin{tabular}{|cc||c||c|}
+	    \hline
+	  $P$ & $L$ & $P \Rightarrow L$ & $L \Rightarrow P$\\
+	  \hline
+	  0 & 0 & 1 & 1\\
+	  0 & 1 & 1 & 0\\
+	  1 & 0 & 0 & 1\\
+	  1 & 1 & 1 & 1\\
+	  \hline
+	    \end{tabular}
+	\end{center}
+
+	
+   \item Vrai. $E \Rightarrow C$ et $C \Rightarrow P$.
+   
+   \item Faux. $(P \vee T) \nLeftrightarrow (P \Rightarrow \neg T)$
+   
+      \begin{center}
+	  \begin{tabular}{|cc||ccc|}
+	  \hline
+	  $P$ & $T$ & $\neg T$ & $P \vee T$ & $P \Rightarrow \neg T$\\
+	  \hline
+	  0 & 0 & 1 & 0 & 1\\
+	  0 & 1 & 0 & 1 & 1\\
+	  1 & 0 & 1 & 1 & 1\\
+	  1 & 1 & 0 & 1 & 0\\
+	  \hline
+	    \end{tabular}
+      \end{center}
+      
+  \item Vrai. $R \Rightarrow H$
+  
+  \item Vrai. $N \Rightarrow F$
+  
+  \item Faux. $(D \Rightarrow P) \nLeftrightarrow (\neg D \Rightarrow \neg P)$
+	    \begin{center}
+	  \begin{tabular}{|cc||c||c|}
+	  \hline
+	  $D$ & $P$ & $D \Rightarrow P$ & $\neg D \Rightarrow \neg P$\\
+	  \hline
+	  0 & 0 & 1 & 1\\
+	  0 & 1 & 1 & 0\\
+	  1 & 0 & 0 & 1\\
+	  1 & 1 & 1 & 1\\
+	  \hline
+	    \end{tabular}
+	    \end{center}
+	    
+  \item Vrai. $(D \Rightarrow P) \Leftrightarrow (\neg P \Rightarrow \neg D)$
+
+
+   
+ \end{enumerate}
+
+ % JUMP TO 1.9
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
+% \JUMP TO 1.9
+
+\section{} % 1.9
+  D\'{e}monstration par r\'{e}currence
+
+  \begin{enumerate}[a. ]
+  \addtocounter{enumi}{1} % SKIP ONE ITEM 
+  \item D\'{e}montrons que $\forall m \in \mathbb{N} \backslash  \big\{0\big\} $
+
+
+  
+  \end{enumerate}
+
  
  
 
