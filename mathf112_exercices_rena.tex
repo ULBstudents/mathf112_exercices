@@ -13,13 +13,13 @@
 \usepackage{amssymb}
 \setcounter{tocdepth}{0} % only chapters appear in 'table of contents'
 
-
   \title{\Large{\bsc{MATH-F-112 - Math\'{e}matiques}}\\
   Exercices - Module A
   }
 
   \author{Renato \bsc{Costa Ribeiro}}
   \date{\today}
+ 
 
 
 \begin{document}
@@ -28,6 +28,102 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%CHAPITRE 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Logique}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%RAPPEL
+\begin{flushleft} \begin{large}\textbf{\underline{Rappel:}}\end{large}\end{flushleft}
+
+\begin{flushleft} \begin{large}\textbf{Logique}\end{large}\end{flushleft}
+
+\begin{multicols}{4}
+
+
+{%
+\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
+\begin{tabular}{|c||c|}
+\mc{2}{l}{NON/NOT}\\
+\hline
+A & $\neg A$\\
+\hline
+0 & 1\\
+1 & 0\\
+\hline
+\end{tabular}
+}
+
+{%
+\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
+\begin{center}
+\begin{tabular}{|cc||c|}
+\mc{3}{l}{Conjonction/ET/AND}\\
+\hline
+A & B & $A \wedge B$\\
+\hline
+0 & 0 & 0\\
+0 & 1 & 0\\
+1 & 0 & 0\\
+1 & 1 & 1\\
+\hline
+\end{tabular}
+\end{center}
+}%
+
+
+{%
+\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
+\begin{center}
+\begin{tabular}{|cc||c|}
+\mc{3}{l}{Disjonction/OU/OR}\\
+\hline
+A & B & $A \vee B$\\
+\hline
+0 & 0 & 0\\
+0 & 1 & 1\\
+1 & 0 & 1\\
+1 & 1 & 1\\
+\hline
+\end{tabular}
+\end{center}
+}%
+
+{%
+\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
+\begin{center}
+\begin{tabular}{|cc||c|}
+\mc{3}{l}{Implication}\\
+\hline
+A & B & $A \Rightarrow B$\\
+\hline
+0 & 0 & 1\\
+0 & 1 & 1\\
+1 & 0 & 0\\
+1 & 1 & 1\\
+\hline
+\end{tabular}
+\end{center}
+}%
+
+\end{multicols}
+\begin{flushleft} \begin{large}\textbf{\newline
+D\'{e}monstration par r\'{e}currence}\end{large}\end{flushleft}
+
+ 
+  On veut une propri\'{e}t\'{e} $P(m)$ por tout $m \in \mathbb{N}$
+  \newline
+  
+  \begin{enumerate}[\textperiodcentered]
+  \item \underline{Cas de base:}
+      \newline
+      Montrons $P(0)$
+   \item \underline{Cas r\'{e}cursif:}
+      \newline
+      Supposons que $P(m)$ est vrai pour $m=k$ ($k \in \mathbb{N}$ quelconque) et montrons $P(m)$ pour $m=k+1$
+      \newline   
+   \item \underline{Remarque:}
+   \newline
+   $P(k)$ s'appelle l'hypoth\`{e}se de r\'{e}currence
+
+  \end{enumerate}
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%EXERCICES
   \section{} % 1.1
     \begin{multicols}{4}
       \begin{enumerate}[a.]
@@ -149,6 +245,10 @@ Comme nous pouvons le constater, la derni\`{e}re colonne uprouve que $(1)\wedge(
 \stepcounter{section}
 % \JUMP TO 1.9
 
+
+
+  
+  
 \section{} % 1.9
   \begin{enumerate}[a. ]
   \addtocounter{enumi}{1} % SKIP ONE ITEM 
@@ -156,7 +256,9 @@ Comme nous pouvons le constater, la derni\`{e}re colonne uprouve que $(1)\wedge(
 
 	D\'{e}montrons que $\forall m \in \mathbb{N} \backslash  \big\{0\big\} : $
 	\newline
-      	\[  \underbrace{1^{3} +  2^{3} + ... +  m^{3}}_\text{$\sum_{i=1}^{m} i^{3}$} =  \frac{ m^{2} (m+1)	^{2}}{4}  \]
+      	\begin{equation}  \underbrace{1^{3} +  2^{3} + ... +  m^{3}}_\text{$\sum_{i=1}^{m} i^{3}$} =  \frac{ m^{2} (m+1)	^{2}}{4} \end{equation}
+      	                                                                                                                	        
+      	                                                                                                                	         
   \begin{enumerate}[\textperiodcentered]
 
      \item \underline{Cas de base:}
@@ -166,8 +268,26 @@ Comme nous pouvons le constater, la derni\`{e}re colonne uprouve que $(1)\wedge(
 	     
 	     
       \item \underline{Cas r\'{e}cursif:}
-
+      \newline
+      Supposon que l'on sait que:
+      \newline
+      \[ \sum_{i=1}^{k} i^{3} = \frac{ k^{2} (k+1)^{2}}{4}\]
+      \newline
+      Montrons alors l'\'{e}quation (1.1) lorsque $m = k+1$ (pour un $k \in \mathbb{N} \backslash  \big\{0\big\}$):
+      \newline
+      On a:
+      \begin{align*}
+       \sum_{i=1}^{k+1} i^{3}  &= 1^{3} + ... +  k^{3} + (k+1)^{3}\\
+       &= \sum_{i=1}^{k} i^{3} + (k+1)^{3}\\
+       &= \frac{k^{2}(k+1)^{2}}{4} + (k+1)^{3}\\
+       &= \frac{k^{2}(k+1)^{2}+4(k+1)^{3}}{4}\\ 
+       &= \frac{(k+1)^{2}}{4}(k^{2}+4k+4)\\
+       \frac{(k+1)^{2}(k+2)^{2}}{4} &= \frac{(k+1)^{2}(k+2)^{2}}{4}\\
+       &ok
+     \end{align*}
      \end{enumerate}
+
+
 
   
 
